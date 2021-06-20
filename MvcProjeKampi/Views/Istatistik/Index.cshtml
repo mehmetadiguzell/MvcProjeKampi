@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="container">
+    <div class="card" style="width: 18rem; background-color: red;float:left;margin:5px">
+        <div class="card-body">
+            <p class="card-text">Toplam Kategori Sayısı :<span class="text-bold">  @ViewBag.ToplamKategori</span></p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; background-color: aqua;float:left;margin:5px">
+        <div class="card-body">
+            <p class="card-text">Yazılım Kategorisinde Açılan Toplam Başlık Sayısı:<span class="text-bold"> @ViewBag.BaslikSayisi</span></p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; background-color: burlywood;float:left;margin:5px">
+        <div class="card-body">
+            <p class="card-text">İçerisinde 'a' harfi bulunan yazar sayisi : <span class="text-bold"> @ViewBag.YazarSayisi</span></p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; background-color: orangered;float:left;margin:5px">
+        <div class="card-body">
+            <p class="card-text">En fazla başlığa sahip kategori adı : <span class="text-bold"> @ViewBag.KategoriIsmi</span></p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; background-color: cadetblue;float:left;margin:5px">
+        <div class="card-body">
+            <p class="card-text">Kategori durumu true olan ile kategori durumu false olan kategoriler arasındaki fark : <span class="text-bold"> @ViewBag.KategoriDurumFark</span></p>
+        </div>
+    </div>
+
+</div>
+
+

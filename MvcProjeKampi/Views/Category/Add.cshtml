@@ -1,0 +1,23 @@
+﻿@model Entities.Concrete.Category
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h1>Kategori Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("Add", "Category", FormMethod.Post, new { @class = "m-3" }))
+{
+    <div class="form-group">
+        @Html.Label("Kategori Adı")
+        @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CategoryName)
+        <br />
+        @Html.Label("Kategori Açıklama")
+        @Html.TextBoxFor(m => m.CategoryDescription, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CategoryDescription)
+        <br />
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </div>
+}
+
+

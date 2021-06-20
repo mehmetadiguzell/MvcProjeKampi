@@ -29,6 +29,11 @@ namespace DataAccsess.Concrete.Repositories
             context.SaveChanges();
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _dbSet.SingleOrDefault(filter);
+        }
+
         public List<T> GetAll()
         {
             return _dbSet.ToList();
@@ -41,6 +46,7 @@ namespace DataAccsess.Concrete.Repositories
 
         public void Update(T entity)
         {
+            context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
         }
     }
