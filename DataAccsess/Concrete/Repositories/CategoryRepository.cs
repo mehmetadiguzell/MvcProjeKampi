@@ -1,15 +1,9 @@
 ﻿using DataAccsess.Abstract;
 using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccsess.Concrete.Repositories
 {
-    public class CategoryRepository :GenericRepository<Category>,ICategoryDal
+    public class CategoryRepository : GenericRepository<Category>, ICategoryDal
     {
         //Context context = new Context();
         //DbSet<Category> _dbSet;

@@ -1,14 +1,9 @@
 ﻿using Entities.Concrete;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccsess.Concrete
 {
-    public class Context:DbContext
+    public class Context : DbContext
     {
         public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -16,5 +11,8 @@ namespace DataAccsess.Concrete
         public DbSet<Content> Contents { get; set; }
         public DbSet<Heading> Headings { get; set; }
         public DbSet<Writer> Writers { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<ImageFile> ImageFiles { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

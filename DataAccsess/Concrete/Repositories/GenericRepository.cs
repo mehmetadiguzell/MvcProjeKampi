@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccsess.Concrete.Repositories
 {
@@ -19,13 +17,17 @@ namespace DataAccsess.Concrete.Repositories
         }
         public void Add(T entity)
         {
-            _dbSet.Add(entity);
+            var addedEntity = context.Entry(entity);
+            addedEntity.State = EntityState.Added;
+            //_dbSet.Add(entity);
             context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            _dbSet.Remove(entity);
+            var deletedEntity = context.Entry(entity);
+            deletedEntity.State = EntityState.Deleted;
+            //_dbSet.Remove(entity);
             context.SaveChanges();
         }
 
@@ -46,7 +48,8 @@ namespace DataAccsess.Concrete.Repositories
 
         public void Update(T entity)
         {
-            context.Entry(entity).State = EntityState.Modified;
+            var updatedEntity = context.Entry(entity);
+            updatedEntity.State = EntityState.Modified;
             context.SaveChanges();
         }
     }

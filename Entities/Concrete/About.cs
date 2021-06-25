@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Concrete
 {
@@ -23,5 +18,7 @@ namespace Entities.Concrete
 
         [StringLength(100)]
         public string AboutImage2 { get; set; }
+
+        public bool Status { get; set; }
     }
 }

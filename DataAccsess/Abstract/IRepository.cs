@@ -1,8 +1,6 @@
-﻿using System.Linq.Expressions;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System;
+using System.Linq.Expressions;
 
 namespace DataAccsess.Abstract
 {

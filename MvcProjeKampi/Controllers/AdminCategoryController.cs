@@ -3,10 +3,6 @@ using Business.ValidationRules;
 using DataAccsess.EntityFramework;
 using Entities.Concrete;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -15,9 +11,10 @@ namespace MvcProjeKampi.Controllers
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
+        [Authorize(Roles = "B")]
         public ActionResult Index()
         {
-            var model=categoryManager.GetAll();
+            var model = categoryManager.GetAll();
             return View(model);
         }
 
@@ -47,10 +44,10 @@ namespace MvcProjeKampi.Controllers
             }
             return View();
         }
-       
+
         public ActionResult Delete(int id)
         {
-            var result= categoryManager.Get(id);
+            var result = categoryManager.Get(id);
             categoryManager.Delete(result);
             return RedirectToAction("Index");
         }

@@ -3,10 +3,6 @@ using Business.ValidationRules;
 using DataAccsess.EntityFramework;
 using Entities.Concrete;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -47,9 +43,9 @@ namespace MvcProjeKampi.Controllers
             {
                 foreach (var result in results.Errors)
                 {
-                    ModelState.AddModelError(result.PropertyName,result.ErrorMessage);
+                    ModelState.AddModelError(result.PropertyName, result.ErrorMessage);
                 }
-            }           
+            }
             return View();
         }
     }

@@ -52,21 +52,76 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
+    <Compile Include="Migrations\202106210825561_WriterEdit.cs" />
+    <Compile Include="Migrations\202106210825561_WriterEdit.designer.cs">
+      <DependentUpon>202106210825561_WriterEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106211832356_WriterTitle.cs" />
+    <Compile Include="Migrations\202106211832356_WriterTitle.designer.cs">
+      <DependentUpon>202106211832356_WriterTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106221850559_WriterEdit1.cs" />
+    <Compile Include="Migrations\202106221850559_WriterEdit1.designer.cs">
+      <DependentUpon>202106221850559_WriterEdit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106221912143_WriterAddStatus.cs" />
+    <Compile Include="Migrations\202106221912143_WriterAddStatus.designer.cs">
+      <DependentUpon>202106221912143_WriterAddStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106230806261_ContentStatus.cs" />
+    <Compile Include="Migrations\202106230806261_ContentStatus.designer.cs">
+      <DependentUpon>202106230806261_ContentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106231237489_HeadingStatus.cs" />
+    <Compile Include="Migrations\202106231237489_HeadingStatus.designer.cs">
+      <DependentUpon>202106231237489_HeadingStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106240746522_MessageEntity.cs" />
+    <Compile Include="Migrations\202106240746522_MessageEntity.designer.cs">
+      <DependentUpon>202106240746522_MessageEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106241754088_ContactDate.cs" />
+    <Compile Include="Migrations\202106241754088_ContactDate.designer.cs">
+      <DependentUpon>202106241754088_ContactDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106250621220_ImageFile.cs" />
+    <Compile Include="Migrations\202106250621220_ImageFile.designer.cs">
+      <DependentUpon>202106250621220_ImageFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106250819062_Admin.cs" />
+    <Compile Include="Migrations\202106250819062_Admin.designer.cs">
+      <DependentUpon>202106250819062_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251558243_MessageIsRead.cs" />
+    <Compile Include="Migrations\202106251558243_MessageIsRead.designer.cs">
+      <DependentUpon>202106251558243_MessageIsRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251807339_AboutStatus.cs" />
+    <Compile Include="Migrations\202106251807339_AboutStatus.designer.cs">
+      <DependentUpon>202106251807339_AboutStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +134,44 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106210825561_WriterEdit.resx">
+      <DependentUpon>202106210825561_WriterEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106211832356_WriterTitle.resx">
+      <DependentUpon>202106211832356_WriterTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221850559_WriterEdit1.resx">
+      <DependentUpon>202106221850559_WriterEdit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106221912143_WriterAddStatus.resx">
+      <DependentUpon>202106221912143_WriterAddStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106230806261_ContentStatus.resx">
+      <DependentUpon>202106230806261_ContentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106231237489_HeadingStatus.resx">
+      <DependentUpon>202106231237489_HeadingStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106240746522_MessageEntity.resx">
+      <DependentUpon>202106240746522_MessageEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106241754088_ContactDate.resx">
+      <DependentUpon>202106241754088_ContactDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106250621220_ImageFile.resx">
+      <DependentUpon>202106250621220_ImageFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106250819062_Admin.resx">
+      <DependentUpon>202106250819062_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251558243_MessageIsRead.resx">
+      <DependentUpon>202106251558243_MessageIsRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251807339_AboutStatus.resx">
+      <DependentUpon>202106251807339_AboutStatus.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

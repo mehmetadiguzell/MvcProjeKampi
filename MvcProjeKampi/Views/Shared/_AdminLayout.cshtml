@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">   
+    <div class="wrapper">
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -47,17 +47,21 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kategoriler                                    
-                                </p>
-                            </a>
-                        </li>
+                        with font-awesome or any other icon font library -->
+                        @if (User.IsInRole("B"))
+                        {
+                            <li class="nav-item has-treeview">
+                                <a href="@Url.Action("Index","AdminCategory")" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kategoriler
+                                    </p>
+                                </a>
+                            </li>
+
+                        }
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="@Url.Action("Index","Heading")" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Başlıklar
@@ -65,7 +69,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="@Url.Action("Index","Writer")" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Yazarlar
@@ -102,26 +106,18 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="@Url.Action("Index","About")" class="nav-link">
                                 <i class="nav-icon fas fa-tree"></i>
                                 <p>
-                                    Hakkımızda                                    
+                                    Hakkımızda
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="@Url.Action("Index","Contact")" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     İletişim & Mesajlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Yazılar
                                 </p>
                             </a>
                         </li>
@@ -129,24 +125,23 @@
                             <a href="pages/calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
-                                    Yetkilendirmeler                                    
+                                    Yetkilendirmeler
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="@Url.Action("Index","Galery")" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
-                                    Resimler
+                                    Galeri
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="@Url.Action("Page404","ErrorPage")" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     Hata Sayfaları
-                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                         </li>
@@ -187,7 +182,7 @@
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="~/Admin/plugins/jquery/jquery.min.js"></script>
+    @*<script src="~/Admin/plugins/jquery/jquery.min.js"></script>*@
     <!-- Bootstrap -->
     <script src="~/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
