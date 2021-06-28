@@ -59,7 +59,9 @@
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
+    <Compile Include="Abstract\IPersonDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
@@ -72,6 +74,8 @@
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfPersonDal.cs" />
+    <Compile Include="EntityFramework\EfSkillDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202106210825561_WriterEdit.cs" />
     <Compile Include="Migrations\202106210825561_WriterEdit.designer.cs">
@@ -120,6 +124,14 @@
     <Compile Include="Migrations\202106251807339_AboutStatus.cs" />
     <Compile Include="Migrations\202106251807339_AboutStatus.designer.cs">
       <DependentUpon>202106251807339_AboutStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106272224496_MySkills.cs" />
+    <Compile Include="Migrations\202106272224496_MySkills.designer.cs">
+      <DependentUpon>202106272224496_MySkills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106280742097_IsDraft.cs" />
+    <Compile Include="Migrations\202106280742097_IsDraft.designer.cs">
+      <DependentUpon>202106280742097_IsDraft.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,6 +182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106251807339_AboutStatus.resx">
       <DependentUpon>202106251807339_AboutStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106272224496_MySkills.resx">
+      <DependentUpon>202106272224496_MySkills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106280742097_IsDraft.resx">
+      <DependentUpon>202106280742097_IsDraft.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

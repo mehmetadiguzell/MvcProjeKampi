@@ -32,12 +32,17 @@ namespace Business.Concrete
 
         public List<Content> GetAll()
         {
-            throw new NotImplementedException();
+            return _contentDal.GetAll();
         }
 
         public List<Content> GetAll(int id)
         {
             return _contentDal.GetAll(c => c.HeadingId == id);
+        }
+
+        public List<Content> GetListByWriter(int id)
+        {
+            return _contentDal.GetAll(c => c.WriterId == id);
         }
 
         public void Update(Content content)

@@ -1,26 +1,25 @@
-﻿using System.Web.Mvc;
+﻿using Business.Concrete;
+using DataAccsess.EntityFramework;
+using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private readonly HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
+        private readonly ContentManager contentManager = new ContentManager(new EfContentDal());
+
+        public ActionResult Headings()
         {
-            return View();
+            var result = headingManager.GetAll();
+            return View(result);
         }
 
-        public ActionResult About()
+        public ActionResult Index(int id = 0)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var result = contentManager.GetAll(id);
+            return PartialView(result);
         }
     }
 }

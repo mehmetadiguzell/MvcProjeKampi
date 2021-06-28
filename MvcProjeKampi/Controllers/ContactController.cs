@@ -31,6 +31,7 @@ namespace MvcProjeKampi.Controllers
             ViewBag.TotalInbox = messageManager.GetListInbox().Count();
             ViewBag.TotalSendbox = messageManager.GetSendInbox().Count();
             ViewBag.UnReadMessage = messageManager.UnIsRead();
+            ViewBag.IsDraft = messageManager.IsDraft();
             ViewBag.Total = total;
 
             return PartialView();

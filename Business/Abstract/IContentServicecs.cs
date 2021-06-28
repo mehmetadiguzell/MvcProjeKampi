@@ -6,6 +6,7 @@ namespace Business.Abstract
     public interface IContentServicecs
     {
         List<Content> GetAll();
+        List<Content> GetListByWriter(int id);
         List<Content> GetAll(int id);
         Content Get(int id);
         void Add(Content content);

@@ -45,7 +45,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Yeni Mesaj Oluştur</h3>
                         </div>
-                        <form method="post" action="/Message/NewMessage">
+                        <form method="post">
                             <div class="card-body">
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Alıcı:" name="ReceiverMail">
@@ -72,12 +72,11 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <div class="float-right">
-                                    <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
+                                    @Html.CheckBoxFor(c => c.IsDraft,new { @class= "checkbox checkbox-danger" }) Taslaklara Kaydet
                                     <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
                                 </div>
                                 <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> İptal et</button>
                             </div>
-                            <!-- /.card-footer -->
                         </form>
                        
                     </div>
@@ -88,11 +87,6 @@
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
-    <!-- /.content-wrapper -->
-    <!-- Control Sidebar -->
-    <!-- /.control-sidebar -->
-    <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="~/Admin/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->

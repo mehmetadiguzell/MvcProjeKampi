@@ -27,6 +27,12 @@ namespace Business.Concrete
             return total;
         }
 
+        public int IsDraft()
+        {
+            var total = _messageDal.GetAll(c => c.IsDraft == true).Count();
+            return total;
+        }
+
         public void Delete(Message message)
         {
             throw new NotImplementedException();
@@ -50,6 +56,11 @@ namespace Business.Concrete
         public void Update(Message message)
         {
             _messageDal.Update(message);
+        }
+
+        public List<Message> GetAll()
+        {
+            return _messageDal.GetAll(c => c.IsDraft == true);
         }
     }
 }

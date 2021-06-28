@@ -7,6 +7,7 @@ namespace Business.Abstract
     {
         List<Message> GetListInbox();
         List<Message> GetSendInbox();
+        List<Message> GetAll();
         Message Get(int id);
         void Add(Message message);
         void Delete(Message message);

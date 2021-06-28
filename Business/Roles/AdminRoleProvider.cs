@@ -1,5 +1,4 @@
-﻿using DataAccsess.Abstract;
-using DataAccsess.Concrete;
+﻿using DataAccsess.Concrete;
 using System;
 using System.Linq;
 using System.Web.Security;
@@ -8,7 +7,7 @@ namespace Business.Roles
 {
     public class AdminRoleProvider : RoleProvider
     {
-       
+
         public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
