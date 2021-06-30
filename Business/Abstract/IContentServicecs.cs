@@ -5,6 +5,7 @@ namespace Business.Abstract
 {
     public interface IContentServicecs
     {
+        List<Content> GetSearchList(string p);
         List<Content> GetAll();
         List<Content> GetListByWriter(int id);
         List<Content> GetAll(int id);

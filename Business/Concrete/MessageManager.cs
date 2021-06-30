@@ -43,14 +43,14 @@ namespace Business.Concrete
             return _messageDal.Get(c => c.MessageId == id);
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string p)
         {
-            return _messageDal.GetAll(c => c.ReceiverMail == "admin@gmail.com");
+                return _messageDal.GetAll(c => c.ReceiverMail == p);        
         }
 
-        public List<Message> GetSendInbox()
+        public List<Message> GetSendInbox(string p)
         {
-            return _messageDal.GetAll(c => c.SenderMail == "admin@gmail.com");
+            return _messageDal.GetAll(c => c.SenderMail == p);
         }
 
         public void Update(Message message)

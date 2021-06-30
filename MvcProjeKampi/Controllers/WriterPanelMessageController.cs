@@ -1,9 +1,11 @@
 ﻿using Business.Concrete;
 using Business.ValidationRules;
+using DataAccsess.Concrete;
 using DataAccsess.EntityFramework;
 using Entities.Concrete;
 using FluentValidation.Results;
 using System;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -14,15 +16,17 @@ namespace MvcProjeKampi.Controllers
         [Obsolete]
         MessageValidator messageValidator = new MessageValidator();
 
-        public ActionResult Inbox()
+        public ActionResult Inbox( )
         {
-            var result = messageManager.GetListInbox();
+            string p= (string)Session["WriterMail"];           
+            var result = messageManager.GetListInbox(p);
             return View(result);
         }
 
         public ActionResult Sendbox()
         {
-            var result = messageManager.GetSendInbox();
+            string p = (string)Session["WriterMail"];
+            var result = messageManager.GetSendInbox(p);
 
             return View(result);
         }
@@ -53,7 +57,7 @@ namespace MvcProjeKampi.Controllers
             ValidationResult results = messageValidator.Validate(message);
             if (results.IsValid)
             {
-                message.SenderMail = "mehmet@gmail.com";
+                message.SenderMail = (string)Session["WriterMail"];
                 message.MessageDate = DateTime.Now;
                 messageManager.Add(message);
                 return RedirectToAction("Sendbox");

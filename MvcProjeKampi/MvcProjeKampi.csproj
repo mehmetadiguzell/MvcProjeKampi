@@ -58,6 +58,12 @@
       <HintPath>..\packages\FluentValidation.10.2.3\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -315,6 +321,55 @@
     <Content Include="Admin\docs\_layouts\post.html" />
     <Content Include="Admin\Error\css\style.css" />
     <Content Include="Admin\Error\img\bg.jpg" />
+    <Content Include="Admin\Home\css\aos-animation.css" />
+    <Content Include="Admin\Home\css\aos.css" />
+    <Content Include="Admin\Home\css\bootstrap.css" />
+    <Content Include="Admin\Home\css\fontawesome-all.css" />
+    <Content Include="Admin\Home\css\roadmap.css" />
+    <Content Include="Admin\Home\css\simpleLightbox.css" />
+    <Content Include="Admin\Home\css\snow.css" />
+    <Content Include="Admin\Home\css\style.css" />
+    <Content Include="Admin\Home\images\banner.jpg" />
+    <Content Include="Admin\Home\images\close.png" />
+    <Content Include="Admin\Home\images\contact.jpg" />
+    <Content Include="Admin\Home\images\exp.jpg" />
+    <Content Include="Admin\Home\images\g1.jpg" />
+    <Content Include="Admin\Home\images\g2.jpg" />
+    <Content Include="Admin\Home\images\g3.jpg" />
+    <Content Include="Admin\Home\images\g4.jpg" />
+    <Content Include="Admin\Home\images\g5.jpg" />
+    <Content Include="Admin\Home\images\g6.jpg" />
+    <Content Include="Admin\Home\images\g7.jpg" />
+    <Content Include="Admin\Home\images\g8.jpg" />
+    <Content Include="Admin\Home\images\g9.jpg" />
+    <Content Include="Admin\Home\images\loader.gif" />
+    <Content Include="Admin\Home\images\move_up.png" />
+    <Content Include="Admin\Home\images\next.png" />
+    <Content Include="Admin\Home\images\prev.png" />
+    <Content Include="Admin\Home\images\serve.jpg" />
+    <Content Include="Admin\Home\images\stats.jpg" />
+    <Content Include="Admin\Home\images\testimonials.jpg" />
+    <Content Include="Admin\Home\js\aos.js" />
+    <Content Include="Admin\Home\js\bootstrap.js" />
+    <Content Include="Admin\Home\js\easing.js" />
+    <Content Include="Admin\Home\js\jquery-2.2.3.min.js" />
+    <Content Include="Admin\Home\js\jquery.countup.js" />
+    <Content Include="Admin\Home\js\jquery.roadmap.js" />
+    <Content Include="Admin\Home\js\jquery.waypoints.min.js" />
+    <Content Include="Admin\Home\js\move-top.js" />
+    <Content Include="Admin\Home\js\simpleLightbox.js" />
+    <Content Include="Admin\Home\vitrinImage\baslikicerikyazma.png" />
+    <Content Include="Admin\Home\vitrinImage\basliklar.png" />
+    <Content Include="Admin\Home\vitrinImage\baslikyazilari.png" />
+    <Content Include="Admin\Home\vitrinImage\gelenmesajlar.png" />
+    <Content Include="Admin\Home\vitrinImage\gonderilenmesajlar.png" />
+    <Content Include="Admin\Home\vitrinImage\hakkimizda.png" />
+    <Content Include="Admin\Home\vitrinImage\taslaklar.png" />
+    <Content Include="Admin\Home\vitrinImage\tumbasliklar.png" />
+    <Content Include="Admin\Home\vitrinImage\yazarlar.png" />
+    <Content Include="Admin\Home\webfonts\fa-brands-400.svg" />
+    <Content Include="Admin\Home\webfonts\fa-regular-400.svg" />
+    <Content Include="Admin\Home\webfonts\fa-solid-900.svg" />
     <Content Include="Admin\img\newyork.jpg" />
     <Content Include="Admin\img\venedik.jpg" />
     <Content Include="Admin\index.html" />
@@ -2034,6 +2089,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2491,6 +2547,18 @@
     <Content Include="Admin\WriterLogin\scss\bootstrap\_utilities.scss" />
     <Content Include="Admin\WriterLogin\scss\bootstrap\_variables.scss" />
     <Content Include="Admin\WriterLogin\scss\style.scss" />
+    <Content Include="Admin\Home\webfonts\fa-brands-400.eot" />
+    <Content Include="Admin\Home\webfonts\fa-brands-400.ttf" />
+    <Content Include="Admin\Home\webfonts\fa-brands-400.woff" />
+    <Content Include="Admin\Home\webfonts\fa-brands-400.woff2" />
+    <Content Include="Admin\Home\webfonts\fa-regular-400.eot" />
+    <Content Include="Admin\Home\webfonts\fa-regular-400.ttf" />
+    <Content Include="Admin\Home\webfonts\fa-regular-400.woff" />
+    <Content Include="Admin\Home\webfonts\fa-regular-400.woff2" />
+    <Content Include="Admin\Home\webfonts\fa-solid-900.eot" />
+    <Content Include="Admin\Home\webfonts\fa-solid-900.ttf" />
+    <Content Include="Admin\Home\webfonts\fa-solid-900.woff" />
+    <Content Include="Admin\Home\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2560,6 +2628,8 @@
     <Content Include="Views\WriterPanelContent\ToDoList.cshtml" />
     <Content Include="Views\Skill\Index.cshtml" />
     <Content Include="Views\Draft\Index.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\Content\GetAllContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,16 +14,16 @@ namespace MvcProjeKampi.Controllers
         [Obsolete]
         MessageValidator messageValidator = new MessageValidator();
 
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
-
-            var result = messageManager.GetListInbox();
-
+             p = "admin@gmail.com";
+            var result = messageManager.GetListInbox(p);
             return View(result);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string p)
         {
-            var result = messageManager.GetSendInbox();
+            p = "admin@gmail.com";
+            var result = messageManager.GetSendInbox(p);
 
             return View(result);
         }

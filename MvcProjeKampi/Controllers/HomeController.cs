@@ -21,5 +21,12 @@ namespace MvcProjeKampi.Controllers
             var result = contentManager.GetAll(id);
             return PartialView(result);
         }
+
+        [AllowAnonymous]
+        public ActionResult HomePage()
+        {
+
+            return View();
+        }
     }
 }

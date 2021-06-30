@@ -62,7 +62,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult Edit(Heading heading)
         {
             headingManager.Update(heading);
-            return View();
+            return RedirectToAction("Index");
         }
         public ActionResult Delete(int id)
         {

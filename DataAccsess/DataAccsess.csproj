@@ -133,6 +133,10 @@
     <Compile Include="Migrations\202106280742097_IsDraft.designer.cs">
       <DependentUpon>202106280742097_IsDraft.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106281232571_SkillValueColumn.cs" />
+    <Compile Include="Migrations\202106281232571_SkillValueColumn.designer.cs">
+      <DependentUpon>202106281232571_SkillValueColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -188,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106280742097_IsDraft.resx">
       <DependentUpon>202106280742097_IsDraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106281232571_SkillValueColumn.resx">
+      <DependentUpon>202106281232571_SkillValueColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

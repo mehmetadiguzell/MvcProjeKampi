@@ -12,6 +12,7 @@ namespace MvcProjeKampi.Controllers
     public class LoginController : Controller
     {
         private readonly LoginManager loginManager = new LoginManager(new EfAdminDal());
+        private readonly WriterLoginManager writerLoginManager = new WriterLoginManager(new EfWriterDal());
 
         public ActionResult Index()
         {
@@ -42,21 +43,21 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer writer)
         {
-            using (Context context = new Context())
+
+            //var result = context.Writers.FirstOrDefault(c => c.WriterMail == writer.WriterMail && c.WriterPassword == writer.WriterPassword);
+            var result = writerLoginManager.GetWriter(writer.WriterMail, writer.WriterPassword);
+            if (result != null)
             {
-                var result = context.Writers.FirstOrDefault(c => c.WriterMail == writer.WriterMail && c.WriterPassword == writer.WriterPassword);
-                if (result != null)
-                {
-                    FormsAuthentication.SetAuthCookie(result.WriterMail, false);
-                    Session["WriterMail"] = result.WriterMail;
-                    return RedirectToAction("MyContent", "WriterPanelContent");
-                }
-                else
-                {
-                    ViewBag.Error = "Kullanıcı adı veya şifre yanlış";
-                    return View();
-                }
+                FormsAuthentication.SetAuthCookie(result.WriterMail, false);
+                Session["WriterMail"] = result.WriterMail;
+                return RedirectToAction("MyContent", "WriterPanelContent");
             }
+            else
+            {
+                ViewBag.Error = "Kullanıcı adı veya şifre yanlış";
+                return View();
+            }
+
         }
 
         public ActionResult LogOut()

@@ -45,6 +45,20 @@ namespace Business.Concrete
             return _contentDal.GetAll(c => c.WriterId == id);
         }
 
+        public List<Content> GetSearchList(string p)
+        {
+            if (p!=null)
+            {
+                return _contentDal.GetAll(c => c.ContentValue.Contains(p));
+            }
+            else
+            {
+                return _contentDal.GetAll();
+            }
+          
+            
+        }
+
         public void Update(Content content)
         {
             throw new NotImplementedException();

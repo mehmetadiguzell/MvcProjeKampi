@@ -55,7 +55,7 @@
                 <div class="col-md-6 skills-right bar_group">
                     @foreach (var skill in Model.Skills)
                     {
-                        <div class='bar_group__bar thin' label='@skill.SkillName &nbsp;&nbsp; @skill.SkillRate%' value='180'></div>
+                        <div class='bar_group__bar thin' label='@skill.SkillName &nbsp;&nbsp; @skill.SkillRate%' value='@skill.SkillValue'></div>
                     }
 
                 </div>

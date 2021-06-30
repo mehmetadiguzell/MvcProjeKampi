@@ -26,10 +26,11 @@ namespace MvcProjeKampi.Controllers
         }
         public PartialViewResult MessageMenu()
         {
+            string mail = "admin@gmail.com";
             var total = contactManager.GetAll().Count();
 
-            ViewBag.TotalInbox = messageManager.GetListInbox().Count();
-            ViewBag.TotalSendbox = messageManager.GetSendInbox().Count();
+            ViewBag.TotalInbox = messageManager.GetListInbox(mail).Count();
+            ViewBag.TotalSendbox = messageManager.GetSendInbox(mail).Count();
             ViewBag.UnReadMessage = messageManager.UnIsRead();
             ViewBag.IsDraft = messageManager.IsDraft();
             ViewBag.Total = total;
