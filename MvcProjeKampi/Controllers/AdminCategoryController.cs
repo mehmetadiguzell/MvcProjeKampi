@@ -33,6 +33,7 @@ namespace MvcProjeKampi.Controllers
             if (results.IsValid)
             {
                 categoryManager.Add(category);
+                TempData["mesajAlindi"] = "";
                 return RedirectToAction("Index");
             }
             else

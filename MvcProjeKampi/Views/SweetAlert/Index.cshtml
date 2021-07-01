@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<button class="btn btn-secondary" id="#btn1">Deneme</button>
+<button class="btn btn-secondary" id="#btn2">Deneme</button>
+
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function () {
+            swal({
+                title: "Tebrikler!",
+                text: "Başarılı bi şekilde eklendi",
+                icon: "success",
+                button: "Tamam",
+            });
+        });
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function () {
+            swal("Hello world!");            
+        });
+    })
+</script>

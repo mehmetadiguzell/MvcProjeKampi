@@ -4,6 +4,17 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
+@if (TempData["mesajAlindi"] != null)
+{
+
+    <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal("Bilgilendirme", "Ekleme işlemi başarılı", "success");
+    </script>
+}
+
 <br />
 <table class="table table-hover table-bordered">
     <thead>

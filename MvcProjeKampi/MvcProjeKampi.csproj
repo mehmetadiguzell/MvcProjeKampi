@@ -140,7 +140,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\DraftController.cs" />
@@ -152,6 +154,8 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
+    <Compile Include="Controllers\SweetAlertController.cs" />
+    <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelContentController.cs" />
     <Compile Include="Controllers\WriterPanelController.cs" />
@@ -159,6 +163,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\SkillVM.cs" />
   </ItemGroup>
@@ -2090,6 +2095,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
+    <Content Include="Content\sweetalert\docs.css" />
+    <Content Include="Content\sweetalert\sweet-alert.css" />
+    <Content Include="Content\sweetalert\thumbs-up.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2559,6 +2568,11 @@
     <Content Include="Admin\Home\webfonts\fa-solid-900.ttf" />
     <Content Include="Admin\Home\webfonts\fa-solid-900.woff" />
     <Content Include="Admin\Home\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\sweetalert\sweet-alert.less" />
+    <Content Include="Content\sweetalert\sweet-alert-combine.less" />
+    <Content Include="Content\sweetalert\sweet-alert-animations.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2630,10 +2644,14 @@
     <Content Include="Views\Draft\Index.cshtml" />
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Content\GetAllContent.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Heading\HeadingReport.cshtml" />
+    <Content Include="Views\SweetAlert\Index.cshtml" />
+    <Content Include="Views\Authorization\Index.cshtml" />
+    <Content Include="Views\Sweet\Alert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
