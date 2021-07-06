@@ -1,9 +1,6 @@
 ﻿using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Business.Abstract
 {
@@ -11,8 +8,10 @@ namespace Business.Abstract
     {
         List<Admin> GetAll();
         Admin Get(int id);
+        List<Admin> Get(string username);
         void Add(Admin admin);
         void Delete(Admin admin);
         void Update(Admin admin);
+        List<SelectListItem> GetRoles();
     }
 }

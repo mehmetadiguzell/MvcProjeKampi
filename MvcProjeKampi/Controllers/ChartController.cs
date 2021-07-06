@@ -1,15 +1,15 @@
-﻿using MvcProjeKampi.Models;
-using System;
+﻿using DataAccsess.Concrete;
+using MvcProjeKampi.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+
     public class ChartController : Controller
     {
-        // GET: Chart
+        //1
         public ActionResult Index()
         {
             return View();
@@ -43,7 +43,59 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult CategoryChart()
         {
-            return Json(BlogList(),JsonRequestBehavior.AllowGet);
+            return Json(BlogList(), JsonRequestBehavior.AllowGet);
         }
+
+
+        //2
+
+        public ActionResult Index2()
+        {
+            return View();
+        }
+        public List<CategoryHeadingChart> CategoryList()
+        {
+            List<CategoryHeadingChart> categoryClass = new List<CategoryHeadingChart>();
+            using (Context context = new Context())
+            {
+                categoryClass = context.Categories.Select(x => new CategoryHeadingChart()
+                {
+
+                    CategoryName = x.CategoryName,
+                    HeadingCount = x.Headings.Count
+                }).ToList();
+            }
+            return categoryClass;
+        }
+
+        public ActionResult CategoryHeadingChart()
+        {
+            return Json(CategoryList(), JsonRequestBehavior.AllowGet);
+        }
+
+        //3
+        public ActionResult Index3()
+        {
+            return View();
+        }
+        public List<WriterHeading> WriterHeadingList()
+        {
+            List<WriterHeading> writers = new List<WriterHeading>();
+            using (Context context = new Context())
+            {
+                writers = context.Writers.Select(x => new WriterHeading()
+                {
+                    writerName = x.WriterName,
+                    headingCount = x.Headings.Count
+                }).ToList();
+            }
+            return writers;
+        }
+
+        public ActionResult WriterHeadingChart()
+        {
+            return Json(WriterHeadingList(), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

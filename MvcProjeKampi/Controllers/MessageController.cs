@@ -16,7 +16,7 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Inbox(string p)
         {
-             p = "admin@gmail.com";
+            p = "admin@gmail.com";
             var result = messageManager.GetListInbox(p);
             return View(result);
         }

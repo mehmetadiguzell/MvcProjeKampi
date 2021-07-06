@@ -38,16 +38,20 @@
                     <div class="image">
                         <img src="~/Admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Mvc Proje Kampı</a>
-                    </div>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <div class="info">
+                            @Html.ActionLink(User.Identity.Name, "", "")
+                        </div>
+                    }
+
                 </div>
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         @if (User.IsInRole("B"))
                         {
                             <li class="nav-item has-treeview">
@@ -68,7 +72,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item">
                             <a href="@Url.Action("GetAllContent","Content")" class="nav-link">
                                 <i class="nav-icon fas fa-book-reader"></i>
                                 <p>
@@ -76,7 +80,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item">
                             <a href="@Url.Action("Index","Writer")" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
@@ -100,13 +104,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="Chart/Index2" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 2</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="Chart/Index3" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 3</p>
                                     </a>
@@ -138,7 +142,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="@Url.Action("Index","Authorization")" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Yetkilendirmeler
@@ -170,7 +174,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="@Url.Action("HomePage","Home")" class="nav-link">
+                            <a href="@Url.Action("Index","Home")" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Siteye Git
@@ -178,7 +182,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="@Url.Action("LogOut","Login")" class="nav-link">
                                 <i class="nav-icon far fa-plus-square"></i>
                                 <p>
                                     Çıkış Yap

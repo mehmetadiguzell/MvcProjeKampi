@@ -45,7 +45,7 @@ namespace Business.Concrete
 
         public List<Message> GetListInbox(string p)
         {
-                return _messageDal.GetAll(c => c.ReceiverMail == p);        
+            return _messageDal.GetAll(c => c.ReceiverMail == p);
         }
 
         public List<Message> GetSendInbox(string p)

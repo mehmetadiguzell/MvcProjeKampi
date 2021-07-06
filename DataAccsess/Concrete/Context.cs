@@ -14,6 +14,7 @@ namespace DataAccsess.Concrete
         public DbSet<Message> Messages { get; set; }
         public DbSet<ImageFile> ImageFiles { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<AdminRole> AdminRoles { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Skill> Skills { get; set; }
     }

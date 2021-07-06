@@ -1,8 +1,6 @@
 ﻿using Business.Concrete;
-using DataAccsess.Concrete;
 using DataAccsess.EntityFramework;
 using Entities.Concrete;
-using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -32,6 +30,7 @@ namespace MvcProjeKampi.Controllers
             else
             {
                 ViewBag.Error = "Kullanıcı adı veya şifre yanlış";
+                ViewBag.Role = "Ve ya bu sayfaya giriş için yetkinizi kontrol edin";
                 return View();
             }
 

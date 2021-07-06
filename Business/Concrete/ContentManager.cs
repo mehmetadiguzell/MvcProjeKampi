@@ -47,7 +47,7 @@ namespace Business.Concrete
 
         public List<Content> GetSearchList(string p)
         {
-            if (p!=null)
+            if (p != null)
             {
                 return _contentDal.GetAll(c => c.ContentValue.Contains(p));
             }
@@ -55,8 +55,8 @@ namespace Business.Concrete
             {
                 return _contentDal.GetAll();
             }
-          
-            
+
+
         }
 
         public void Update(Content content)

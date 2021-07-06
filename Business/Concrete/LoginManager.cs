@@ -15,7 +15,7 @@ namespace Business.Concrete
 
         public Admin Login(Admin admin)
         {
-            return _adminDal.Get(x => x.AdminUserName == admin.AdminUserName && x.AdminPassword == admin.AdminPassword);
+            return _adminDal.Get(x => x.AdminUserName == admin.AdminUserName && x.AdminPassword == admin.AdminPassword && x.Status == true);
         }
     }
 }

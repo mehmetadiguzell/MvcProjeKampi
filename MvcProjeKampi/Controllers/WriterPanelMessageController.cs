@@ -1,11 +1,9 @@
 ﻿using Business.Concrete;
 using Business.ValidationRules;
-using DataAccsess.Concrete;
 using DataAccsess.EntityFramework;
 using Entities.Concrete;
 using FluentValidation.Results;
 using System;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -16,9 +14,9 @@ namespace MvcProjeKampi.Controllers
         [Obsolete]
         MessageValidator messageValidator = new MessageValidator();
 
-        public ActionResult Inbox( )
+        public ActionResult Inbox()
         {
-            string p= (string)Session["WriterMail"];           
+            string p = (string)Session["WriterMail"];
             var result = messageManager.GetListInbox(p);
             return View(result);
         }

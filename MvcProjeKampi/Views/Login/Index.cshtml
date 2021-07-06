@@ -48,8 +48,14 @@
                             <div class="form-group">
                                 @if (ViewBag.Error != null)
                                 {
-                                    <p class="alert alert-danger">@ViewBag.Error</p>
+                                    <p class="alert alert-danger text-black-50">@ViewBag.Error</p>
                                 }
+                                @if (ViewBag.Role != null)
+                                {
+                                    <p class="alert alert-info text-black-50">@ViewBag.Role</p>
+                                }
+
+                                
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn form-control btn-primary rounded submit px-3">Giriş Yap</button>
@@ -63,12 +69,10 @@
             </div>
         </div>
     </section>
-
     <script src="~/Admin/Login/js/jquery.min.js"></script>
     <script src="~/Admin/Login/js/popper.js"></script>
     <script src="~/Admin/Login/js/bootstrap.min.js"></script>
     <script src="~/Admin/Login/js/main.js"></script>
-
 </body>
 </html>
 

@@ -1,15 +1,14 @@
 ﻿using Business.Concrete;
+using Business.ValidationRules;
 using DataAccsess.Concrete;
 using DataAccsess.EntityFramework;
 using Entities.Concrete;
+using FluentValidation.Results;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using PagedList;
-using PagedList.Mvc;
-using Business.ValidationRules;
-using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -21,7 +20,7 @@ namespace MvcProjeKampi.Controllers
 
         Context context = new Context();
 
-        public ActionResult WriterProfile(int id=0)
+        public ActionResult WriterProfile(int id = 0)
         {
             string info = (string)Session["WriterMail"];
             id = context.Writers.Where(c => c.WriterMail == info).Select(y => y.WriterId).FirstOrDefault();
@@ -109,9 +108,9 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("MyHeading");
         }
 
-        public ActionResult AllHeading(int page=1)
+        public ActionResult AllHeading(int page = 1)
         {
-            var result = headingManager.GetAll().ToPagedList(page,6);
+            var result = headingManager.GetAll().ToPagedList(page, 6);
             return View(result);
         }
     }

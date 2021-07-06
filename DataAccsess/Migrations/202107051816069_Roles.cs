@@ -2,16 +2,14 @@
 {
     using System.Data.Entity.Migrations;
 
-    public partial class SkillValueColumn : DbMigration
+    public partial class Roles : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Skills", "SkillValue", c => c.String());
         }
 
         public override void Down()
         {
-            DropColumn("dbo.Skills", "SkillValue");
         }
     }
 }

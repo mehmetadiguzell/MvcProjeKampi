@@ -1,11 +1,8 @@
 ﻿using Business.Abstract;
 using DataAccsess.Abstract;
 using Entities.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Business.Concrete
 {
@@ -32,14 +29,25 @@ namespace Business.Concrete
             return _adminDal.Get(c => c.AdminId == id);
         }
 
+        public List<Admin> Get(string username)
+        {
+            return _adminDal.GetAll(c => c.AdminUserName == username);
+        }
+
         public List<Admin> GetAll()
         {
             return _adminDal.GetAll();
+        }
+
+        public List<SelectListItem> GetRoles()
+        {
+            return _adminDal.Roles();
         }
 
         public void Update(Admin admin)
         {
             _adminDal.Update(admin);
         }
+
     }
 }

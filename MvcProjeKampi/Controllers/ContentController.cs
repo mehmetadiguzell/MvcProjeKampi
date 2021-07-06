@@ -1,7 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccsess.Concrete;
 using DataAccsess.EntityFramework;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -9,8 +8,7 @@ namespace MvcProjeKampi.Controllers
     public class ContentController : Controller
     {
         private readonly ContentManager contentManager = new ContentManager(new EfContentDal());
-        Context context = new Context();
-
+        
         public ActionResult Index()
         {
             return View();
@@ -27,7 +25,7 @@ namespace MvcProjeKampi.Controllers
             {
                 var result = contentManager.GetSearchList(p);
                 return View(result);
-            }  
+            }
         }
 
         public ActionResult ContentByHeading(int id = 0)

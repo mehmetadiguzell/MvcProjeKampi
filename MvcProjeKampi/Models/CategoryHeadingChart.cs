@@ -1,8 +1,8 @@
 ﻿namespace MvcProjeKampi.Models
 {
-    public class CategoryClass
+    public class CategoryHeadingChart
     {
         public string CategoryName { get; set; }
-        public int CategoryCount { get; set; }
+        public int HeadingCount { get; set; }
     }
 }

@@ -13,7 +13,9 @@ namespace Entities.Concrete
         [StringLength(50)]
         public string AdminPassword { get; set; }
 
-        [MaxLength(1)]
-        public string AdminRole { get; set; }
+        public bool Status { get; set; }
+
+        public int? RoleId { get; set; }
+        public virtual AdminRole AdminRole { get; set; }
     }
 }

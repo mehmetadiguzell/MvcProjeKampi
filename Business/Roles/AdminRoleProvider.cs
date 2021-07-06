@@ -40,7 +40,7 @@ namespace Business.Roles
             using (Context context = new Context())
             {
                 var result = context.Admins.FirstOrDefault(c => c.AdminUserName == username);
-                return new string[] { result.AdminRole };
+                return new string[] { result.AdminRole.RoleName };
             }
         }
 
