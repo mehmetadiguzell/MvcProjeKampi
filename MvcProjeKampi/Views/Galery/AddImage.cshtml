@@ -1,0 +1,17 @@
+﻿@model MvcProjeKampi.ViewModels.ImageVM
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Galeriye Yeni Resim Yükleyin</h2>
+<form action="/Galery/AddImage" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input type="file" name="GaleryImage" class="form-control-file" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-outline-success">Kaydet</button>
+</form>
+
+
