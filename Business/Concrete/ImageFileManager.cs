@@ -13,6 +13,10 @@ namespace Business.Concrete
         {
             _imageFileDal = imageFileDal;
         }
+        public void Add(ImageFile imgFile)
+        {
+            _imageFileDal.Add(imgFile);
+        }
 
         public List<ImageFile> GetAll()
         {
